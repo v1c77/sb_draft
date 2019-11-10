@@ -23,6 +23,8 @@ set -o pipefail
 #                  k8s.io/kubernetes. The output-base is needed for the generators to output into the vendor dir
 #                  instead of the $GOPATH directly. For normal projects this can be dropped.
 ../vendor/k8s.io/code-generator/generate-groups.sh \
-  ../staging/smartx.com/client-go \
-  ../staging/smartx.com/client-go \
+  "deepcopy,client,informer,lister" \
+  smartx.com/sb_draft/staging/smartx.com/client-go \
+  smartx.com/sb_draft/staging/smartx.com/client-go/api \
+  --go-header-file /boilerplate/boilerplate.go.txt \
   vm.smartx.com:v1alpha1
