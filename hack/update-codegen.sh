@@ -25,5 +25,4 @@ set -o pipefail
 ../vendor/k8s.io/code-generator/generate-groups.sh \
   ../staging/smartx.com/client-go \
   ../staging/smartx.com/client-go \
-  vm.smartx.com:v1alpha1 \
-  --go-header-file $(pwd)/boilerplate/boilerplate.go.txt
+  vm.smartx.com:v1alpha1
