@@ -13,26 +13,25 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-set -o errexit
-set -o nounset
-set -o pipefail
+set -ex
 
 # generate the code with:
 # --output-base    because this script should also be able to run inside the vendor dir of
 #                  k8s.io/kubernetes. The output-base is needed for the generators to output into the vendor dir
 #                  instead of the $GOPATH directly. For normal projects this can be dropped.
-../vendor/k8s.io/code-generator/generate-groups.sh \
-  "deepcopy,client,informer,lister" \
-  smartx.com/sb_draft/staging/smartx.com/client-go \
-  smartx.com/sb_draft/staging/smartx.com/client-go/api \
-  --go-header-file /boilerplate/boilerplate.go.txt \
-  vm.smartx.com:v1alpha1
 
-  ../vendor/k8s.io/code-generator/generate-groups.sh \
-  "deepcopy,client,informer,lister" \
+#  ../vendor/k8s.io/code-generator/generate-groups.sh \
+#  "deepcopy,client,informer,lister" \
+#  smartx.com/sb_draft/staging/smartx.com/client-go \
+#  smartx.com/sb_draft/staging/smartx.com/client-go/api \
+#  vm.smartx.com:v1alpha1\
+#  --go-header-file $(pwd)/boilerplate.go.txt \
+#  --output-base $(pwd)/../../
+
+../vendor/k8s.io/code-generator/generate-groups.sh \
+  all \
   smartx.com/sb_draft/staging/smartx.com/client-go \
   smartx.com/sb_draft/staging/smartx.com/client-go/api \
   vm.smartx.com:v1alpha1\
   --go-header-file $(pwd)/boilerplate.go.txt \
-  --output-base $(pwd)/../../
+  --output-base $(pwd)/../

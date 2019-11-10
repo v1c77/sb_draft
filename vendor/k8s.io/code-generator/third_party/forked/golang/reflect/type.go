@@ -1,4 +1,4 @@
-//This package is copied from Go library reflect/type.go.
+//This package is copied from Go library reflect/types.go.
 //The struct tag library provides no way to extract the list of struct tags, only
 //a specific tag
 package reflect
