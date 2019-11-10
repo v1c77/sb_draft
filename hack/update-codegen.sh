@@ -28,3 +28,11 @@ set -o pipefail
   smartx.com/sb_draft/staging/smartx.com/client-go/api \
   --go-header-file /boilerplate/boilerplate.go.txt \
   vm.smartx.com:v1alpha1
+
+  ../vendor/k8s.io/code-generator/generate-groups.sh \
+  "deepcopy,client,informer,lister" \
+  smartx.com/sb_draft/staging/smartx.com/client-go \
+  smartx.com/sb_draft/staging/smartx.com/client-go/api \
+  vm.smartx.com:v1alpha1\
+  --go-header-file $(pwd)/boilerplate.go.txt \
+  --output-base $(pwd)/../../
