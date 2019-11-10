@@ -1,4 +1,4 @@
-module github.com/sb_draft
+module smartx.com/sb_draft
 
 go 1.13
 
